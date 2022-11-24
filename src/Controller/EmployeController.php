@@ -27,7 +27,7 @@ class EmployeController extends AbstractController
      */
     public function show(Employe $employe): Response
     {
-        return $this->render('employe/show.html.twig', [
+        return $this->render('employe/show.html.twig', [    /* syntax ? */
             'employe' => $employe
         ]);
     }
