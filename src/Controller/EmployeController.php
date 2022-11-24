@@ -21,4 +21,14 @@ class EmployeController extends AbstractController
             'employes' => $employes
         ]);
     }
+
+    /**
+     * @Route("/employe"/{id}", name="show_employe")
+     */
+    public function show(Employe $employe): Response
+    {
+        return $this->render('employe/show.html.twig', [
+            'employe' => $employe
+        ]);
+    }
 }
