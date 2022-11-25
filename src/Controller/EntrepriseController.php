@@ -8,6 +8,7 @@ use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 class EntrepriseController extends AbstractController
 {
@@ -21,9 +22,7 @@ class EntrepriseController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/entreprise/add", name="add_entreprise")
-     */
+    #[Route("/entreprise/add", name:"add_entreprise")]
     public function add(ManagerRegistry $doctrine, Entreprise $entreprise=null, Request $request):Response{
         $form = $this->createForm(EntrepriseType::class, $entreprise);
         $form->handleRequest($request);
